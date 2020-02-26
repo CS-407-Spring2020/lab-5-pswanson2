@@ -11,7 +11,7 @@
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jane Doe"
+        android:hint="Jane Doe"
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@id/password"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:layout_marginTop="12dp"
+        android:onClick="clickFunction"
         app:layout_constraintTop_toBottomOf="@id/password"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
