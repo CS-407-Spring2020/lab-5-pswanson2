@@ -9,15 +9,16 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
+    EditText e;
+
     public void clickFunction(View view) {
-        EditText e = (EditText) view.findViewById(R.id.username);
-//        String s = e.getText().toString();
-        goToActivity2();
+        String s = e.getText().toString();
+        goToActivity2(s);
     }
 
-    public void goToActivity2() {
+    public void goToActivity2(String s) {
         Intent intent = new Intent(this, Main2Activity.class);
-//        intent.putExtra("message", s);
+        intent.putExtra("message", s);
         startActivity(intent);
     }
 
@@ -25,5 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        e = (EditText) findViewById(R.id.username);
     }
 }
