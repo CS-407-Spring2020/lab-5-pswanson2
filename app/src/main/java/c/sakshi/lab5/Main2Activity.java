@@ -3,7 +3,9 @@ package c.sakshi.lab5;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,7 +22,7 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         t = (TextView) findViewById(R.id.textView2);
-        String s = getIntent().getStringExtra("message");
+        String s = getIntent().getStringExtra("username");
         t.setText("Hello, " + s);
     }
 
@@ -34,14 +36,16 @@ public class Main2Activity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item1:
-                Toast.makeText(this, "Functionality not implemented", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.item2:
                 Intent intent = new Intent(this, MainActivity.class);
+                SharedPreferences sharedPreferences = getSharedPreferences("c.sakshi.lab5", Context.MODE_PRIVATE);
+                sharedPreferences.edit().remove("username").apply();
                 startActivity(intent);
                 return true;
             default: return super.onOptionsItemSelected(item);
         }
     }
+
 }
 
