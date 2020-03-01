@@ -35,9 +35,10 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.item1:
+            case R.id.item1:  // add note
+                goToActivity3();
                 return true;
-            case R.id.item2:
+            case R.id.item2:  // logout
                 Intent intent = new Intent(this, MainActivity.class);
                 SharedPreferences sharedPreferences = getSharedPreferences("c.sakshi.lab5", Context.MODE_PRIVATE);
                 sharedPreferences.edit().remove("username").apply();
@@ -45,6 +46,11 @@ public class Main2Activity extends AppCompatActivity {
                 return true;
             default: return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void goToActivity3() {
+        Intent intent = new Intent(this, Main3Activity.class);
+        startActivity(intent);
     }
 
 }
