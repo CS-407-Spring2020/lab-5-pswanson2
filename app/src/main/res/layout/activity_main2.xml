@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
+        android:id="@+id/notesListView"
         android:layout_width="wrap_content"
         android:layout_height="710dp"
         app:layout_constraintLeft_toLeftOf="parent"
